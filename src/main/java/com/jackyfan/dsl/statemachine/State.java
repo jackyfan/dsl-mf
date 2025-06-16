@@ -7,10 +7,16 @@ public class State {
     private List<Command> commands = new ArrayList<Command>();
     private Map<String, Transition> transitions = new HashMap<String, Transition>();
 
+    public State(String name) {
+        this.name = name;
+    }
 
     public void addTransition(Event event, State tragetState) {
-        assert null != tragetState;
         transitions.put(event.getCode(), new Transition(this, event, tragetState));
+    }
+
+    public void addAction(Command command) {
+        commands.add(command);
     }
 
     public Collection<State> getAllTargets() {

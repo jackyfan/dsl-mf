@@ -22,4 +22,12 @@ public class Controller {
         currentState = targetState;
         currentState.executeActions(commandChanel);
     }
+
+    public void setMachine(StateMachine machine) {
+        this.machine = machine;
+    }
+
+    public void setCommandChanel(CommandChanel commandChanel) {
+        this.commandChanel = commandChanel;
+    }
 }
