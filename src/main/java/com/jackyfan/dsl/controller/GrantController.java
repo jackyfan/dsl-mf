@@ -1,4 +1,9 @@
-package com.jackyfan.dsl.statemachine;
+package com.jackyfan.dsl.controller;
+
+import com.jackyfan.dsl.statemachine.Command;
+import com.jackyfan.dsl.statemachine.Event;
+import com.jackyfan.dsl.statemachine.State;
+import com.jackyfan.dsl.statemachine.StateMachine;
 
 public class GrantController {
 
@@ -7,6 +12,7 @@ public class GrantController {
         Event lightOn = new Event("lightOn", "L1ON");
         Event doorOpened = new Event("doorOpened", "D1OP");
         Event panelClosed = new Event("panelClosed", "PNCL");
+        Event doorClosed = new Event("doorClosed", "D1CL");
         Command unlockPanelCmd = new Command("unlockPanel", "PNUL");
         Command lockPanelCmd = new Command("lockPanel", "PNLK");
         Command lockDoorCmd = new Command("lockDoor", "D1LK");

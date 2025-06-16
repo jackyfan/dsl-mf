@@ -1,4 +1,8 @@
-package com.jackyfan.dsl.statemachine;
+package com.jackyfan.dsl.controller;
+
+import com.jackyfan.dsl.statemachine.CommandChanel;
+import com.jackyfan.dsl.statemachine.State;
+import com.jackyfan.dsl.statemachine.StateMachine;
 
 public class Controller {
     private State currentState;
