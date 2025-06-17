@@ -35,10 +35,14 @@ public class State {
         return transitions.get(eventCode).getTarget();
     }
 
-    public void executeActions(CommandChanel commandChanel) {
+    public void executeActions(CommandChannel commandChannel) {
         for (Command c : commands) {
-            commandChanel.send(c.getCode());
+            commandChannel.send(c.getCode());
         }
+    }
+
+    public String getName() {
+        return name;
     }
 
 

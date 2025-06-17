@@ -1,16 +1,18 @@
 package com.jackyfan.dsl.controller;
 
-import com.jackyfan.dsl.statemachine.CommandChanel;
+import com.jackyfan.dsl.statemachine.CommandChannel;
 import com.jackyfan.dsl.statemachine.State;
 import com.jackyfan.dsl.statemachine.StateMachine;
 
 public class Controller {
     private State currentState;
-    private StateMachine machine;
-    private CommandChanel commandChanel;
+    private final StateMachine machine;
+    private final CommandChannel commandChannel;
 
-    public CommandChanel getCommandChanel() {
-        return commandChanel;
+    public Controller(StateMachine machine, CommandChannel commandChannel) {
+        this.machine = machine;
+        this.commandChannel = commandChannel;
+        this.currentState = machine.getStart();
     }
 
     public void handle(String eventCode) {
@@ -24,14 +26,11 @@ public class Controller {
 
     private void transitionTo(State targetState) {
         currentState = targetState;
-        currentState.executeActions(commandChanel);
+        currentState.executeActions(commandChannel);
     }
 
-    public void setMachine(StateMachine machine) {
-        this.machine = machine;
+    public State getCurrentState() {
+        return currentState;
     }
 
-    public void setCommandChanel(CommandChanel commandChanel) {
-        this.commandChanel = commandChanel;
-    }
 }
