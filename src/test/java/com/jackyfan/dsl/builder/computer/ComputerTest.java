@@ -2,9 +2,9 @@ package com.jackyfan.dsl.builder.computer;
 
 import org.junit.Test;
 
-public class ComputerTester {
+public class ComputerTest {
     @Test
-    public void test_computer() {
+    public void test_build_computer() {
         Computer computer = ComputerBuilder.computerBuilder()
                 .processor()
                     .cores(3)
