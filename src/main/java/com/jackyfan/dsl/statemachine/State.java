@@ -4,11 +4,17 @@ import java.util.*;
 
 public class State {
     private String name;
+    private String code;
     private List<Command> commands = new ArrayList<Command>();
     private Map<String, Transition> transitions = new HashMap<String, Transition>();
 
     public State(String name) {
         this.name = name;
+    }
+
+    public State(String name, String code) {
+        this.name = name;
+        this.code = code;
     }
 
     public void addTransition(Event event, State tragetState) {
